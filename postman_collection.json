@@ -4,7 +4,7 @@
 		"name": "STSTStudentCourse",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "51229386",
-		"_collection_link": "https://abdulmaliksahadat-7223902.postman.co/workspace/c1de683c-ea3c-4562-bc12-c2cc0173159a/collection/51229386-f4b3921d-4ab3-41fb-8d33-b87bb109761a?action=share&source=collection_link&creator=51229386"
+		"_collection_link": "https://abdulmaliksahadat-7223902.postman.co/workspace/QA-PRACTICE-~c1de683c-ea3c-4562-bc12-c2cc0173159a/collection/51229386-f4b3921d-4ab3-41fb-8d33-b87bb109761a?action=share&source=collection_link&creator=51229386"
 	},
 	"item": [
 		{
@@ -19,9 +19,12 @@
 								"exec": [
 									"pm.test(\"Status code should be 200\", function () {\r",
 									"pm.test(\"Status code name should have an OK string\", function () {\r",
-									"    pm.response.to.have.status(\"Created\");\r",
+									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
 									"    pm.response.to.have.status(200);\r",
+									"pm.test(\"Response time should be less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -136,8 +139,8 @@
 							],
 							"query": [
 								{
-									"key": "",
-									"value": "",
+									"key": "id",
+									"value": "3",
 									"disabled": true
 								}
 							]
@@ -236,7 +239,9 @@
 								"exec": [
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
