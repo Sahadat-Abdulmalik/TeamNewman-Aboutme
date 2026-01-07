@@ -1,0 +1,83 @@
+newman
+
+STSTStudentCourse
+
+□ Get All Todo Entries
+└ Get All Todo Entries
+  GET https://demo.fusio-project.org/index.php?id=3 [200 OK, 2.53kB, 960ms]
+  √  Status code name should have an OK string
+  1. Response time should be less than 200ms
+  √  Status code should be 200
+
+□ Get All Entries
+└ Get All Entries
+  GET https://demo.fusio-project.org/index.php/ [200 OK, 2.53kB, 238ms]
+
+□ Get entry per ID
+└ Get entry per ID - Valid ID
+  GET https://demo.fusio-project.org/index.php [200 OK, 2.53kB, 193ms]
+
+└ Get entry per ID - Invalid ID(params not using TODO ID)
+  GET https://demo.fusio-project.org/ [200 OK, 2.53kB, 220ms]
+
+□ Get Books
+└ Get All Books
+  GET https://simple-books-api.glitch.me/books [200 OK, 1.16kB, 1580ms]
+
+└ Get Books by ID
+  GET https://simple-books-api.glitch.me/books/1 [200 OK, 1.06kB, 1228ms]
+
+└ Get Books by Type
+  GET https://simple-books-api.glitch.me/books?type=fiction [200 OK, 1.02kB, 1322ms]
+
+□ Place a book order
+└ Place a book order - using book ID
+  POST https://simple-books-api.glitch.me/orders [401 Unauthorized, 791B, 1306ms]
+
+□ Get an order
+└ Get all orders
+  GET https://simple-books-api.glitch.me/orders [401 Unauthorized, 791B, 1270ms]
+
+└ Get an order - using orderID
+  GET https://simple-books-api.glitch.me/orders/AaX7WGCUeHH3lRwGRh57M [401 Unauthorized, 791B, 1185ms]
+
+□ Update an order
+└ Update an order
+  POST https://simple-books-api.glitch.me/orders/ [401 Unauthorized, 791B, 1277ms]
+
+□ Delete an order
+└ Delete an order
+  DELETE https://simple-books-api.glitch.me/orders/rObASEWYlVrRX6cTAEgbt [401 Unauthorized, 791B, 1318ms]
+
+→ Register API Client
+  POST https://simple-books-api.glitch.me/api-clients/ [409 Conflict, 811B, 1236ms]
+
+→ Get API Status
+  GET https://simple-books-api.glitch.me/status [200 OK, 754B, 1296ms]
+
+┌─────────────────────────┬──────────────────────┬─────────────────────┐
+│                         │             executed │              failed │
+├─────────────────────────┼──────────────────────┼─────────────────────┤
+│              iterations │                    1 │                   0 │
+├─────────────────────────┼──────────────────────┼─────────────────────┤
+│                requests │                   14 │                   0 │
+├─────────────────────────┼──────────────────────┼─────────────────────┤
+│            test-scripts │                   11 │                   0 │
+├─────────────────────────┼──────────────────────┼─────────────────────┤
+│      prerequest-scripts │                    0 │                   0 │
+├─────────────────────────┼──────────────────────┼─────────────────────┤
+│              assertions │                    3 │                   1 │
+├─────────────────────────┴──────────────────────┴─────────────────────┤
+│ total run duration: 16s                                              │
+├──────────────────────────────────────────────────────────────────────┤
+│ total data received: 10.01kB (approx)                                │
+├──────────────────────────────────────────────────────────────────────┤
+│ average response time: 1044ms [min: 193ms, max: 1580ms, s.d.: 449ms] │
+└──────────────────────────────────────────────────────────────────────┘
+
+[31m  # [39m[31m failure        [39m[31m detail                                               [39m
+[90m    [39m[90m                [39m[90m                                                      [39m
+ 1.  AssertionError  Response time should be less than 200ms              
+                     expected 960 to be below 200                         
+                     at assertion:2 in test-script                        
+                     inside "Get All Todo Entries / Get All Todo Entries" 
